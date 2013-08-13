@@ -34,6 +34,13 @@ module.exports = (grunt) ->
         files: 'src/*/templates/**'
         tasks: ['copy']
 
+    clean: [
+      '*/'
+      '!node_modules/'
+      '!src/'
+    ]
+
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-copy'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
