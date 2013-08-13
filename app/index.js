@@ -58,10 +58,7 @@ exports = module.exports = Generator = (function(_super) {
     this.template('_docpad.coffee', 'docpad.coffee');
     this.template('_package.json', 'package.json');
     this.template('_README.md', 'README.md');
-    this.copy('Gruntfile.coffee', 'Gruntfile.coffee');
-    this.copy('editorconfig', '.editorconfig');
-    this.copy('gitattributes', '.gitattributes');
-    return this.copy('gitignore', '.gitignore');
+    return this.directory('root', '.');
   };
 
   Generator.prototype.copyDocpadFile = function() {

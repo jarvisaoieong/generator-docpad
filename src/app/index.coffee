@@ -41,10 +41,7 @@ exports = module.exports = class Generator extends yeoman.generators.Base
     @template '_docpad.coffee', 'docpad.coffee'
     @template '_package.json', 'package.json'
     @template '_README.md', 'README.md'
-    @copy 'Gruntfile.coffee', 'Gruntfile.coffee'
-    @copy 'editorconfig', '.editorconfig'
-    @copy 'gitattributes', '.gitattributes'
-    @copy 'gitignore', '.gitignore'
+    @directory 'root', '.'
 
   copyDocpadFile: ->
     @template 'layouts/_default.html.eco', 'src/layouts/default.html.eco'

@@ -22,6 +22,7 @@ module.exports = (grunt) ->
           cwd: 'src'
           src: '*/templates/**'
           dest: '.'
+          dot: true
         ]
 
     watch:
