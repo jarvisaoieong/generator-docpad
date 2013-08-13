@@ -7,17 +7,24 @@ exports = module.exports = class Generator extends yeoman.generators.Base
   constructor: (args, options, config) ->
     super
     @basename = path.basename options.env.cwd
-    # @on 'end', ->
-    #   @installDependencies skipInstall: options['skip-install']
-    #   @pkg = JSON.parse @readFileAsString path.join __dirname, '../package.json'
+    @on 'end', ->
+      @installDependencies skipInstall: options['skip-install']
 
   askFor: ->
     done = @async()
     console.log @yeoman
     @prompt [
       name: 'name'
-      message: 'What is your app name?'
+      message: 'App name'
       default: @basename
+    ,
+      name: 'description'
+      message: 'Description'
+      default: ''
+    ,
+      name: 'version'
+      message: 'Version'
+      default: '0.0.0'
     ],
       (props) =>
         _.extend this, props
@@ -29,7 +36,13 @@ exports = module.exports = class Generator extends yeoman.generators.Base
     @mkdir 'src/files'
     @mkdir 'src/layouts'
 
-  copyfile: ->
+  copyRootFile: ->
     @template '_bower.json', 'bower.json'
     @template '_docpad.coffee', 'docpad.coffee'
     @template '_package.json', 'package.json'
+    @template '_README.md', 'README.md'
+    @copy 'Gruntfile.coffee', 'Gruntfile.coffee'
+
+  copyDocpadFile: ->
+    @template 'layouts/_default.html.eco', 'src/layouts/default.html.eco'
+    @copy 'documents/index.html.md', 'src/documents/index.html.md'

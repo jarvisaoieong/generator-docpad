@@ -4,11 +4,18 @@ module.exports = (grunt) ->
   grunt.initConfig
 
     read_components:
-      read:
+      js:
         options:
           concat: true
-          files:
-            js: 'src/files/scripts/vendor.js'
-            css: 'src/files/styles/vendor.css'
+          regex: /\.js$/
+          dest: 'src/files/scripts/vendor.js'
+          seperator: ';'
+      css:
+        options:
+          concat: true
+          regex: /\.css$/
+          dest: 'src/files/styles/vendor.css'
 
   grunt.loadNpmTasks 'grunt-read-components'
+
+  grunt.registerTask 'default', ['read_components']

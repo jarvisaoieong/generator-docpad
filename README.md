@@ -1,26 +1,40 @@
-# grunt-init-node
+# generator-docpad
 
-> Create a Node.js module with [grunt-init][]
+> Yeoman generator for docpad, integrated with headless bower support.
 
-[grunt-init]: http://gruntjs.com/project-scaffolding
-
-## Installation
-If you haven't already done so, install [grunt-init][].
-
-Once grunt-init is installed, place this template in your `~/.grunt-init/` directory. It's recommended that you use git to clone this template into that directory, as follows:
+## Getting Started
 
 ```
-git clone https://github.com/kinua/grunt-init-gruntfile.git ~/.grunt-init/gruntfile
+$ npm install -g kinua/generator-docpad
+$ mkdir /path/to/your/project
+$ cd $_
+$ yo docpad
+$ grunt
+$ docpad run
 ```
 
-_(Windows users, see [the documentation][grunt-init] for the correct destination directory path)_
-
-## Usage
-
-At the command-line, cd into an empty directory, run this command and follow the prompts.
+## Documentation
+Using awesome [paulmillr/read-components](https://github.com/paulmillr/read-components) to integrate with bower components.
 
 ```
-grunt-init gruntfile
+$ bower install --save <components you like>
 ```
 
-_Note that this template will generate files in the current directory, so be sure to change to a new directory first if you don't want to overwrite existing files._
+You need to set the overrides property in bower.json if the third party bower components dont follow the bower.json convention. Then just run
+
+```
+$ grunt
+```
+
+Then you can run docpad as usual
+
+```
+$ docpad run
+```
+
+## Release History
+* 2013-08-13      v0.1.0      First release
+
+## License
+Copyright (c) 2013 Jarvis A.I.
+Licensed under the MIT license.

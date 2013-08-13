@@ -1,15 +1,15 @@
 {
   "name": "<%= _.slugify(name) %>.docpad",
-  "version": "0.0.0",
+  "version": "<%= version %>",
   "description": "<%= description %>",
   "dependencies": {
-    "docpad": "~6.48.0",
+    "docpad": "~6.49.0",
     "docpad-plugin-eco": "~2.0.2",
     "docpad-plugin-marked": "~2.1.1",
     "docpad-plugin-livereload": "~2.5.1",
     "docpad-plugin-stylus": "~2.4.0",
     "docpad-plugin-coffeescript": "~2.2.2",
-    "grunt-read-components": "~0.1.0"
+    "grunt-read-components": "~0.1.2"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

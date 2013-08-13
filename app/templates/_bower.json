@@ -1,6 +1,6 @@
 {
   "name": "<%= _.slugify(name) %>",
-  "version": "0.0.0",
+  "version": "<%= version %>",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -10,7 +10,7 @@
   ],
   "dependencies": {
     "jquery": "~2.0.3",
-    "bootstrap": "~3.0.0-rc1"
+    "bootstrap": "~3.0.0"
   },
   "overrides": {
     "jquery": {

@@ -1,7 +1,7 @@
 {
   "name": "generator-docpad",
   "version": "0.0.0",
-  "description": "A generator for Docpad",
+  "description": "Yeoman generator for docpad, integrated with headless bower support.",
   "keywords": [
     "yeoman-generator"
   ],
@@ -21,7 +21,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.13.0"
+    "yeoman-generator": "~0.13.0",
+    "underscore": "~1.5.1"
   },
   "devDependencies": {
     "mocha": "~1.12.0",
