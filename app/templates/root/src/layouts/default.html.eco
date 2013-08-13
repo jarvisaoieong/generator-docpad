@@ -4,13 +4,13 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
-      <title><%%= @document.title or @site.title %></title>
+      <title><%= @document.title or @site.title %></title>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <%%- @getBlock("meta").toHTML() %>
-      <%%- @getBlock("styles").add('styles/vendor.css').toHTML() %>
+      <%- @getBlock("meta").toHTML() %>
+      <%- @getBlock("styles").add('styles/vendor.css').toHTML() %>
   </head>
   <body>
 
@@ -24,7 +24,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><%= name %></a>
+          <a class="navbar-brand" href="#">Docpad</a>
           <div class="nav-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
@@ -61,11 +61,11 @@
         </p>
       </div>
       <p>
-        <%%- @content %>
+        <%- @content %>
       </p>
 
     </div> <!-- /container -->
 
-    <%%- @getBlock("scripts").add('scripts/vendor.js').toHTML() %>
+    <%- @getBlock("scripts").add('scripts/vendor.js').toHTML() %>
   </body>
 </html>

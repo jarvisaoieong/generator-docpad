@@ -33,6 +33,6 @@ $ docpad run
 ```
 
 ## License
-Copyright (c) 2013 Jarvis A.I.
+Copyright (c) 2013 Jarvis A.I. <kinua1230@gmail.com>
 
 Licensed under the MIT license.
