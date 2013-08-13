@@ -2,4 +2,4 @@ module.exports =
 
   templateData:
     site:
-      title: '<%= name %>'
+      title: '<%= _.slugify(name) %>'

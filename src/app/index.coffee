@@ -1,10 +1,12 @@
 yeoman = require 'yeoman-generator'
 path = require 'path'
+_ = require 'underscore'
 
 exports = module.exports = class Generator extends yeoman.generators.Base
 
   constructor: (args, options, config) ->
     super
+    @basename = path.basename options.env.cwd
     # @on 'end', ->
     #   @installDependencies skipInstall: options['skip-install']
     #   @pkg = JSON.parse @readFileAsString path.join __dirname, '../package.json'
@@ -13,13 +15,12 @@ exports = module.exports = class Generator extends yeoman.generators.Base
     done = @async()
     console.log @yeoman
     @prompt [
-      type: 'confirm'
-      name: 'someOption'
-      message: 'Would you like to enable this option?'
-      default: true
+      name: 'name'
+      message: 'What is your app name?'
+      default: @basename
     ],
       (props) =>
-        @name = 'jarvis'
+        _.extend this, props
         done()
 
   makeDir: ->
