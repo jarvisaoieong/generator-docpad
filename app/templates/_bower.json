@@ -1,5 +1,5 @@
 {
-  "name": "<%= _.slugify(name) %>",
+  "name": "<%= name %>",
   "version": "<%= version %>",
   "ignore": [
     "**/.*",

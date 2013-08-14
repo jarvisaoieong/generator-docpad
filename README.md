@@ -14,6 +14,7 @@ $ docpad run
 ```
 
 ## Documentation
+
 Using awesome [paulmillr/read-components](https://github.com/paulmillr/read-components) to integrate with bower components.
 
 ```sh
@@ -33,6 +34,6 @@ $ docpad run
 ```
 
 ## License
-Copyright (c) 2013 Jarvis A.I. <kinua1230@gmail.com>
 
+Copyright (c) 2013 Jarvis AI
 Licensed under the MIT license.

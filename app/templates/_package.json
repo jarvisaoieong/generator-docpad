@@ -1,7 +1,22 @@
 {
-  "name": "<%= _.slugify(name) %>.docpad",
+  "name": "<%= name %>.docpad",
   "version": "<%= version %>",
   "description": "<%= description %>",
+  "author": {
+    "name": "<%= author %>",
+    "email": "<%= email %>",<% if (usingGithub) { %>
+    "url": "https://github.com/<%= githubUser %>"<% } %>
+  },
+  "main": "node_modules/docpad/bin/docpad-server",<% if (usingGithub) { %>
+  "homepage": "https://github.com/<%= githubUser %>/<%= githubRepo %>",
+  "bugs": "https://github.com/<%= githubUser %>/<%= githubRepo %>/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/<%= githubUser %>/<%= githubRepo %>.git"
+  },<% } %>
+  "scripts": {
+    "start": "node_modules/docpad/bin/docpad-server"
+  },
   "dependencies": {
     "docpad": "~6.49.0",
     "docpad-plugin-eco": "~2.0.2",
@@ -11,8 +26,13 @@
     "docpad-plugin-coffeescript": "~2.2.2",
     "grunt-read-components": "~0.1.2"
   },
-  "main": "node_modules/docpad/bin/docpad-server",
-  "scripts": {
-    "start": "node_modules/docpad/bin/docpad-server"
-  }
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
 }
