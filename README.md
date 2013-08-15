@@ -5,6 +5,7 @@
 ## Getting Started
 
 ```sh
+$ npm install -g bower grunt-cli yo docpad
 $ npm install -g kinua/generator-docpad
 $ mkdir /path/to/your/project
 $ cd $_
@@ -35,5 +36,5 @@ $ docpad run
 
 ## License
 
-Copyright (c) 2013 Jarvis AI
+Copyright (c) 2013 Jarvis Ao Ieong  
 Licensed under the MIT license.

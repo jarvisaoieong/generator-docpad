@@ -83,6 +83,8 @@ exports.prototype.askFor = function() {
 
 exports.prototype.copyRootFile = function() {
   this.directory('root', '.');
+  this.copy('_README.md', 'README.md');
+  this.copy("_package.json", 'package.json');
 };
 
 exports.prototype.copyLicenses = function() {
@@ -91,16 +93,12 @@ exports.prototype.copyLicenses = function() {
   };
   this._.each(this.licenses, function(license) {
     var licenseFile = 'LICENSE-' + license;
-    this.template('licenses/' + licenseFile, licenseFile);
+    this.copy('licenses/' + licenseFile, licenseFile);
   }.bind(this));
 };
 
-exports.prototype.copyTemplateFiles = function() {
-  this.template('_README.md', 'README.md');
-  this.template("_package.json", 'package.json');
+exports.prototype.copyDocpadFiles = function() {
+  this.copy('_bower.json', 'bower.json');
+  this.copy('_docpad.coffee', 'docpad.coffee');
 };
 
-exports.prototype.copyDocpadFiles = function() {
-  this.template('_bower.json', 'bower.json');
-  this.template('_docpad.coffee', 'docpad.coffee');
-};
