@@ -7,9 +7,11 @@
 _(Coming soon)_
 
 ## Documentation
+
 _(Coming soon)_
 
 ## Examples
+
 _(Coming soon)_<% if (usingGithub && licenses && licenses.length) { %>
 
 ## License
